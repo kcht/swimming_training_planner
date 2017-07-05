@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TrainingsHelper do
+RSpec.describe TrainingsHelper, type: :helper do
   describe '#total_distance' do
     subject(:total_distance) { helper.total_distance(content) }
 
@@ -63,7 +63,26 @@ RSpec.describe TrainingsHelper do
 
       it { is_expected.to eq(300)}
     end
+  end
 
+  describe '#can_be_deleted_by_user?' do
+    subject(:can_be_deleted_by_user?) { helper.can_be_deleted_by_user?(training) }
+    let(:training) { FactoryGirl.create(:training, created_by: 1)}
 
+    before do
+     allow(helper).to receive(:current_user) { current_user }
+    end
+
+    context 'when training was created by the current user' do
+      let(:current_user) { instance_double(User, id: 1)}
+
+      it { is_expected.to be true }
+    end
+
+    context 'when training was not created by current user' do
+      let(:current_user) { instance_double(User, id: 2)}
+
+      it { is_expected.to be false }
+    end
   end
 end
