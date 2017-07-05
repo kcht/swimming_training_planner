@@ -1,25 +1,31 @@
 <h1> Hello </h1>
-<p>
-  <%= link_to 'Add new training', new_training_path %>
-</p>
+<% if user_signed_in? %>
+  <p>
+    <%= link_to 'Add new training', new_training_path %>
+  </p>
+<% end %>
 
 <h2>Existing trainings</h2>
 <%= @trainings.each_with_index do |t, index| %>
-    <div name="training-item">
-      <div name="index">#<%= index %></div>
-      <div name="title"><%= t.title %></div>
-      <div name="content"><%= t.content %></div>
-      <div name="total-distance">Total: <%= t.total_distance %></div>
-      <%= name = user_name(t.created_by) %>
-      <% if name %>
-          <div name="created-by">Added by:<%= link_to user_name(t.created_by)[:name],
+    <div class="training-item">
+      <div class="index">#<%= index %></div>
+      <div class="title"><%= t.title %></div>
+      <div class="content"><%= t.content %></div>
+      <div class="total-distance">Total: <%= t.total_distance %></div>
+      <% if user_name(t.created_by) %>
+          <div class="created-by">Added by:<%= link_to user_name(t.created_by)[:name],
                                                       user_name(t.created_by)[:profile_path] %>
           </div>
       <% end %>
-      <% link_to 'Add to my training plan', '#' %>
+      <% if can_be_deleted_by_user?(t) %>
+        <%= link_to 'Delete this training', training_path(t), method: :delete %>
+      <% end %>
+      <%= link_to 'Add to my training plan', '#' %>
     </div>
 <% end %>
 
+<% if user_signed_in? %>
 <p>
   <%= link_to 'Add new training', new_training_path %>
 </p>
+<%end%>

@@ -1,9 +1,14 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$color_deep: #003b46;
+$color_medium: #07575b;
+$color_light: #66a5ad;
+$color_ultralight: #c4dfe6;
+
 body{
     padding-top: 60px;
-    background: #238888;
+    background: $color_light;
 }
 
 $primary_color: #0197b2;

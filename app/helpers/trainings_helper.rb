@@ -1,4 +1,9 @@
 module TrainingsHelper
+  def can_be_deleted_by_user?(training)
+    user_id = training.created_by
+    user_id == current_user&.id
+  end
+
   def append_database_field_before_create(hash)
     hash.merge( {created_by: current_user.id, total_distance: total_distance(hash[:content]) })
   end

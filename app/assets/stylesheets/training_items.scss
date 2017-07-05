@@ -1,0 +1,44 @@
+$color_deep: #003b46;
+$color_medium: #07575b;
+$color_light: #66a5ad;
+$color_ultralight: #c4dfe6;
+
+div.training-item {
+    float: left;
+    display: block;
+    margin-right: 1.35765%;
+    width: 31.76157%;
+    margin-bottom: 2rem;
+
+    &:hover {
+       opacity: 0.3;
+    }
+
+
+}
+div.title {
+    background: $color_deep;
+    color: $color_ultralight;
+    padding: 0.5rem 0.5rem 2rem 0.5rem;
+    margin-top: 0px;
+}
+
+div.content {
+    height: 10rem;
+    padding: 0.5rem;
+    background: $color_ultralight;
+    white-space:pre;
+
+}
+
+
+div.total-distance {
+    padding: 0.5rem;
+    background: $color_medium;
+}
+
+div.created-by {
+    padding: 0.5rem;
+    background: $color_deep;
+    color: $color_ultralight;
+}

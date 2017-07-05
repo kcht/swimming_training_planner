@@ -1,9 +1,9 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="container">
-    <%= link_to "Swimming training planner", '#', id: "logo" %>
+    <%= link_to "Swimming training planner", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Home", '#' %></li>
+        <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Help",  '#' %></li>
         <% if user_signed_in? %>
             <li><%= link_to "Users", users_path %></li>
