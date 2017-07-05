@@ -28,6 +28,9 @@ gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'
 
+gem 'factory_girl'
+gem 'factory_girl_rails'
+gem 'rspec'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
