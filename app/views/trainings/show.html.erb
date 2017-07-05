@@ -1,0 +1,11 @@
+<h1>Training id: <%= @training.id %></h1>
+<div name="training-item" >
+  <div name="index">#<%= @training.id %></div>
+  <div name="title"><%= @training.title %></div>
+  <div name="content"><%= @training.content %></div>
+  <div name="total-distance">Total: <%= @training.total_distance %></div>
+  <div name="created-by">Added by:<%= @training.created_by %></div>
+  <% link_to 'Add to my training plan', '#' %>
+</div>
+
+<%= link_to 'Back', trainings_path %>

@@ -75,6 +75,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     connection_pool (2.2.1)
+    database_cleaner (1.6.1)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -182,6 +183,14 @@ GEM
     rspec-mocks (3.6.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.6.0)
+    rspec-rails (3.6.0)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.6.0)
+      rspec-expectations (~> 3.6.0)
+      rspec-mocks (~> 3.6.0)
+      rspec-support (~> 3.6.0)
     rspec-support (3.6.0)
     ruby_dep (1.5.0)
     rubyzip (1.2.1)
@@ -241,6 +250,7 @@ DEPENDENCIES
   byebug
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  database_cleaner
   devise
   factory_girl
   factory_girl_rails
@@ -257,6 +267,7 @@ DEPENDENCIES
   react-rails
   responders
   rspec
+  rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
   spring

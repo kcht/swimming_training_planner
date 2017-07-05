@@ -1,0 +1,36 @@
+/* header */
+
+$primary_color: purple;
+.navbar-nav li a {
+    color: white;
+    font-size: 15px;
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #0197b2;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 15px;
+    font-weight: bold;
+
+&
+:hover {
+    text-decoration: none;
+    color: #fff;
+
+}
+
+}
+
+
+
+
+.dropdown-menu {
+    background: black;
+}
+.dropdown-menu > li > a:hover {
+    background: $primary_color;
+}
