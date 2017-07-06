@@ -1,0 +1,19 @@
+<div class="training-item">
+  <div class="index">#<%= index %></div>
+  <%= link_to training_path(training) do %>
+      <div class="title"><%= training.title %></div>
+  <% end %>
+  <div class="content">
+    <%= react_component("TrainingContent", {content: training.content, minimum_lines_to_display: 3}) %>
+  </div>
+  <div class="total-distance">Total: <%= training.total_distance %></div>
+  <% if user_name(training.created_by) %>
+      <div class="created-by">Added by:<%= link_to user_name(training.created_by)[:name],
+                                                   user_name(training.created_by)[:profile_path] %>
+      </div>
+  <% end %>
+  <% if can_be_deleted_by_user?(training) %>
+      <%= link_to 'Delete this training', training_path(training), method: :delete %>
+  <% end %>
+  <%= link_to 'Add to my training plan', '#' %>
+</div>

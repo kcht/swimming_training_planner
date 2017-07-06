@@ -1,36 +1,17 @@
 <h1> Hello </h1>
 <% if user_signed_in? %>
-  <p>
-    <%= link_to 'Add new training', new_training_path %>
-  </p>
+    <p>
+      <%= link_to 'Add new training', new_training_path %>
+    </p>
 <% end %>
 
 <h2>Existing trainings</h2>
-<%   @trainings.each_with_index do |t, index| %>
-    <div class="training-item">
-      <div class="index">#<%= index %></div>
-      <div class="title"><%= t.title %></div>
-      <div class="content">
-        <% content = t.content.split("\n") %>
-        <% content.each do |line| %>
-          <div class="exercise"><%= line %></div>
-        <%end%>
-      </div>
-      <div class="total-distance">Total: <%= t.total_distance %></div>
-      <% if user_name(t.created_by) %>
-          <div class="created-by">Added by:<%= link_to user_name(t.created_by)[:name],
-                                                      user_name(t.created_by)[:profile_path] %>
-          </div>
-      <% end %>
-      <% if can_be_deleted_by_user?(t) %>
-        <%= link_to 'Delete this training', training_path(t), method: :delete %>
-      <% end %>
-      <%= link_to 'Add to my training plan', '#' %>
-    </div>
+<% @trainings.each_with_index do |t, index| %>
+        <%= render "training_item", training: t, index: index+1 %>
 <% end %>
 
 <% if user_signed_in? %>
-<p>
-  <%= link_to 'Add new training', new_training_path %>
-</p>
-<%end%>
+    <p>
+      <%= link_to 'Add new training', new_training_path %>
+    </p>
+<% end %>

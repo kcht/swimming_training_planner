@@ -14,4 +14,7 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap
+//= require react
+//= require react_ujs
+//= require react_bootstrap
 //= require_tree .
