@@ -18,8 +18,7 @@ module TrainingsHelper
         result =merged.split(/[x*]/)
         sum += result[0].to_i * result[1].to_i
       else
-        merged  =line.scan(/\d/).join
-        sum += merged.to_i
+        sum += line[/\d+/].to_i
       end
     end
   end

@@ -24,13 +24,10 @@ div.title {
 }
 
 div.content {
-    height: 10rem;
+    height: auto;
     padding: 0.5rem;
     background: $color_ultralight;
-    white-space:pre;
-
 }
-
 
 div.total-distance {
     padding: 0.5rem;

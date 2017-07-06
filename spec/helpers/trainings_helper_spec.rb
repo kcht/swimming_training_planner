@@ -63,6 +63,12 @@ RSpec.describe TrainingsHelper, type: :helper do
 
       it { is_expected.to eq(300)}
     end
+
+    context 'when multiple numbers in line' do
+      let(:content) {"kraul 100m: oddech co 3/5/7\n200m dowolnie"}
+
+      it { is_expected.to eq(300)}
+    end
   end
 
   describe '#can_be_deleted_by_user?' do
