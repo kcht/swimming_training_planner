@@ -1,0 +1,27 @@
+<h1>Training plan</h1>
+<table>
+  <tr>
+    <th>#</th>
+    <th>Training id</th>
+    <th>Training name</th>
+    <th>Date planned</th>
+    <th>Status</th>
+    <th>Training plan id</th>
+    <th>Training plan </th>
+    <th>Actions</th>
+  </tr>
+<% @items.each_with_index do |item, index| %>
+      <tr>
+      <td><%= index+1 %></td>
+    <td><%= item.training.id %></td>
+    <td><%= item.training.title %></td>
+    <td><%= item.date %></td>
+    <td><%= training_plan_item_status(item) %></td>
+    <td><%= item.training_plan.id %></td>
+    <td><%= item.training_plan.name %></td>
+    <td><%= link_to 'Delete', '#'%></td>
+    <td><%= link_to 'Edit', '#' %></td>
+      </tr>
+  <%end%>
+
+</table>

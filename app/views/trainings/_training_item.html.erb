@@ -15,5 +15,5 @@
   <% if can_be_deleted_by_user?(training) %>
       <%= link_to 'Delete this training', training_path(training), method: :delete %>
   <% end %>
-  <%= link_to 'Add to my training plan', '#' %>
+  <%= link_to 'Add to my training plan', add_training_path(training.id), method: :post %>
 </div>
