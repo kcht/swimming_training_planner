@@ -3,6 +3,13 @@
     <p>
       <%= link_to 'Add new training', new_training_path %>
     </p>
+    <% else %>
+    <div class="center jumbotron">
+      <h3>If you want to add trainings to your training plans, please sign in or sign up!</h3>
+
+      <%= link_to "Sign in!", new_user_session_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to "Sign up!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    </div>
 <% end %>
 
 <h2>Existing trainings</h2>

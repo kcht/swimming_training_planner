@@ -1,0 +1,8 @@
+<h1>Training plans</h1>
+<li>
+<% @training_plans.each do |plan| %>
+    <ul>
+       <%= link_to "#{plan.name}", training_plan_path(id: plan.id) %>
+    </ul>
+<% end %>
+</li>

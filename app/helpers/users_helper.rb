@@ -7,8 +7,6 @@ module UsersHelper
 
   def users_training_plan(user_id)
     user = User.find(user_id)
-    require 'pry'
-    binding.pry
     if user
       TrainingPlan.find_or_create_by(user_id: user_id) do |plan|
         plan.name = "Default training plan for user #{user.name}"
