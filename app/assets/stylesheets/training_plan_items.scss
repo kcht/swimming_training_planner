@@ -1,0 +1,36 @@
+$color_deep: #003b46;
+$color_medium: #07575b;
+$color_light: #66a5ad;
+$color_ultralight: #c4dfe6;
+
+.training-plan-items-table
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    background: $color_ultralight;
+    color: $color_deep;
+    margin: 45px;
+    width: 480px;
+    border-collapse: collapse;
+    text-align: left;
+}
+.training-plan-items-table th
+{
+    font-size: 14px;
+    font-weight: normal;
+    color: $color_ultralight;
+    background: $color_deep;
+    padding: 10px 8px;
+    border-bottom: 2px solid $color_deep;
+}
+.training-plan-items-table td
+{
+    border-bottom: 1px solid $color_deep;
+    color: $color_deep;
+    padding: 6px 8px;
+}
+.training-plan-items-table tbody tr:hover td
+{
+    background: $color_medium;
+    color: $color_ultralight;
+}

@@ -1,5 +1,5 @@
 <h1><%= @training_plan.name %></h1>
-<table>
+<table class="training-plan-items-table">
   <tr>
     <th>#</th>
     <th>Training id</th>
@@ -7,21 +7,26 @@
     <th>Date planned</th>
     <th>Status</th>
     <th>Training plan id</th>
-    <th>Training plan </th>
+    <th>Training plan</th>
     <th>Actions</th>
   </tr>
-<% @items.each_with_index do |item, index| %>
-      <tr>
-      <td><%= index+1 %></td>
-    <td><%= item.training.id %></td>
-    <td><%= item.training.title %></td>
-    <td><%= item.date %></td>
-    <td><%= training_plan_item_status(item) %></td>
-    <td><%= item.training_plan.id %></td>
-    <td><%= item.training_plan.name %></td>
-    <td><%= link_to 'Delete', '#'%></td>
-    <td><%= link_to 'Edit', '#' %></td>
+  <% @items.each_with_index do |item, index| %>
+      <tr class="training-item">
+        <td><%= index+1 %></td>
+        <td><%= item.training.id %></td>
+        <td><%= item.training.title %></td>
+        <td><%= item.date %></td>
+        <td><%= training_plan_item_status(item) %></td>
+        <td><%= item.training_plan.id %></td>
+        <td><%= item.training_plan.name %></td>
+        <td><%= link_to 'Delete', training_plan_item_path(item), method: :delete %></td>
+        <td><%= link_to 'Edit', '#' %></td>>
+        <td>
+              Mark finished:
+              <%= check_box_tag 'checkbox', item.id, checked = item.finished, :class => 'checkbox', :id => item.id %>
+        </td>
       </tr>
-  <%end%>
+  <% end %>
 
 </table>
+

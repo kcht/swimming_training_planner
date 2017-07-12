@@ -17,4 +17,6 @@
 //= require react
 //= require react_ujs
 //= require react_bootstrap
+
+//= require training_plan_item
 //= require_tree .

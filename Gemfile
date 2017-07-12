@@ -23,6 +23,7 @@ gem 'react-bootstrap-rails'
 gem 'responders'
 gem 'pry'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem 'jquery'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'
@@ -38,6 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'timecop'
 end
 
 group :development do

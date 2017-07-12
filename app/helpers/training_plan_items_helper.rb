@@ -1,6 +1,6 @@
 module TrainingPlanItemsHelper
   def training_plan_item_status(item)
-    return 'nil' unless item
-    return item.finished ? 'Planned' : 'Finished'
+    return 'nil' if item.finished.nil?
+    return item.finished ? 'Finished' : 'Planned'
   end
 end
