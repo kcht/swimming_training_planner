@@ -15,6 +15,8 @@ class TrainingPlansController < ApplicationController
   def add_training
     users_training_plan = users_training_plan(current_user.id)
     users_training_plan.training_plan_items.create(training_id: params[:training_id])
+    flash[:success] = 'Added training item to default training plan for user :)'
+    redirect_to trainings_path
   end
 
   def redirect_to_login_if_not_authenticated

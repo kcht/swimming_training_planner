@@ -19,6 +19,7 @@ RSpec.describe TrainingPlanItemsHelper, type: :helper do
 
   let(:training_plan) {FactoryGirl.create(:training_plan, user_id: user.id)}
   let(:user) {FactoryGirl.create(:user)}
+
   describe '#total_distance_in_completed_trainings' do
     subject { helper.total_distance_in_completed_trainings(trainings) }
 

@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     $(".checkbox").click(function () {
 
         var chb = $(this);
