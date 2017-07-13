@@ -1,32 +1,39 @@
 <h1><%= @training_plan.name %></h1>
-<table class="training-plan-items-table">
-  <tr>
-    <th>#</th>
-    <th>Training id</th>
-    <th>Training name</th>
-    <th>Date planned</th>
-    <th>Status</th>
-    <th>Training plan id</th>
-    <th>Training plan</th>
-    <th>Actions</th>
-  </tr>
-  <% @items.each_with_index do |item, index| %>
-      <tr class="training-item">
-        <td><%= index+1 %></td>
-        <td><%= item.training.id %></td>
-        <td><%= item.training.title %></td>
-        <td><%= item.date %></td>
-        <td><%= training_plan_item_status(item) %></td>
-        <td><%= item.training_plan.id %></td>
-        <td><%= item.training_plan.name %></td>
-        <td><%= link_to 'Delete', training_plan_item_path(item), method: :delete %></td>
-        <td><%= link_to 'Edit', '#' %></td>>
-        <td>
-              Mark finished:
-              <%= check_box_tag 'checkbox', item.id, checked = item.finished, :class => 'checkbox', :id => item.id %>
-        </td>
-      </tr>
-  <% end %>
+  <%= link_to 'Choose training item from existing trainings', trainings_path, class: "btn btn-lg btn-primary center" %>
+  <%= link_to 'Add new training', new_training_path, class: "btn btn-lg btn-primary center" %>
 
-</table>
+  <p>Total distance in completed trainings: <%= total_distance_in_completed_trainings(@training_plan.training_plan_items) %></p>
+  <p>Total number of completed trainigns: <%= total_number_of_completed_trainings(@training_plan.training_plan_items) %></p>
+  <table class="training-plan-items-table">
+    <tr>
+      <th>#</th>
+      <th>Training id</th>
+      <th>Training name</th>
+      <th>Distance</th>
+      <th>Date</th>
+      <th>Status</th>
+      <th>Training plan id</th>
+      <th>Training plan</th>
+      <th>Actions</th>
+    </tr>
+    <% @items.each_with_index do |item, index| %>
+        <tr class="training-item">
+          <td><%= index+1 %></td>
+          <td><%= item.training.id %></td>
+          <td><%= item.training.title %></td>
+          <td><%= item.training.total_distance %></td>
+          <td><%= item.date %></td>
+          <td><%= training_plan_item_status(item) %></td>
+          <td><%= item.training_plan.id %></td>
+          <td><%= item.training_plan.name %></td>
+          <td><%= link_to 'Delete', training_plan_item_path(item), method: :delete %></td>
+          <td><%= link_to 'Edit', '#' %></td>
+          <td>
+            Mark finished:
+            <%= check_box_tag 'checkbox', item.id, checked = item.finished, :class => 'checkbox', :id => item.id %>
+          </td>
+        </tr>
+    <% end %>
+
+  </table>
 

@@ -34,8 +34,6 @@ class TrainingPlanItemsController < ApplicationController
 
   def destroy
     @item = TrainingPlanItem.find(params[:id])
-    require 'pry'
-    binding.pry
 
     @item.destroy
     training_plan_id= request.referrer.split('/').last
